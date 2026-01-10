@@ -1,0 +1,1 @@
+source '../../20251124__Rueda de Prensa/01_Preparacion/AI_dialogos/PY_audio_env/bin/activate'
