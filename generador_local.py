@@ -14,7 +14,7 @@ SEMITONOS = 2.8   # Cuánto agudizar la voz (Pitch)
 INPUT_SR = 22050  # Frecuencia de muestreo de las voces AhoTTS
 
 # Lista de audios a generar
-# IMPORTANTE: El nombre de la voz debe coincidir EXACTAMENTE con el instalado en Windows
+# IMPORTANTE: El nombre de la voz debe coincidir EXACTAMENTE con el instalado (interno) en Windows
 bloques = [
     {
         "voz": "AhoTTS_Alba_es", # Cambia esto si usas otra voz (ej: Microsoft Helena Desktop)

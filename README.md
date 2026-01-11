@@ -14,7 +14,7 @@ Este paquete contiene dos herramientas para generar audios.
 
 
 
-## 🛠️ OPCIÓN A: Generador Local
+## 🛠️ OPCIÓN A: Generador Local (Recomendado)
 
 Usa las voces instaladas en tu PC (como AhoTTS) y las modifica con un programa externo.
 
@@ -49,7 +49,7 @@ Usa las voces instaladas en tu PC (como AhoTTS) y las modifica con un programa e
 
 ---
 
-## 🚀 OPCIÓN B: Generador Online
+## 🚀 OPCIÓN B: Generador Online (No funciona en Euskera)
 
 Usa voces neuronales de internet.
 
@@ -60,6 +60,6 @@ Usa voces neuronales de internet.
     ```bash
     python generador_moderno.py
     ```
-5.  Los audios aparecerán en la carpeta `audios_modernos`.
+5.  Los audios aparecerán en la carpeta `audios_online`.
 
 ---
