@@ -1,0 +1,55 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv/
+venv/
+
+# =========================
+# Windows
+# =========================
+Thumbs.db
+Desktop.ini
+
+# =========================
+# IDEs / Editores
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# Audio generado
+# =========================
+*.wav
+*.mp3
+*.ogg
+*.flac
+
+# Carpetas de salida de audios
+audios_locales/
+audios_online/
+ga_*/
+output/
+outputs/
+
+# =========================
+# Temporales
+# =========================
+temp_*
+*_temp.wav
+*_TEMP.wav
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# FFmpeg / binarios locales
+# =========================
+ffmpeg.exe
+ffmpeg/

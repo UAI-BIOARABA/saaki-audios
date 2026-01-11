@@ -21,10 +21,23 @@ Usa las voces instaladas en tu PC (como AhoTTS) y las modifica con un programa e
 ### Requisitos Extra para Opción B
 
 1.  **FFmpeg**: Debes tener instalado `ffmpeg` y configurado en las variables de entorno de Windows.
-    * *Prueba*: Escribe `ffmpeg -version` en la terminal. Si sale error, no funcionará.
-2.  **Voces Instaladas**: Debes tener las voces instaladas (ej. `AhoTTS_Ainara_eu`). Si no las tienes, el script usará la voz por defecto de Windows (David o Zira).
+2.  **Descarga**: Ve a la página oficial de FFmpeg y en la sección de Windows selecciona los ejecutables de gyan.dev o BtbN. Descarga el archivo .zip o .7z (generalmente llamado "release-essentials" o "full").
+3.  **Extrae**: Descomprime el contenido. Verás una carpeta con subcarpetas como bin, doc y presets.
+4.  **Ubica**: Mueve la carpeta extraída a la raíz de tu disco duro (ejemplo: C:\ffmpeg) para que sea fácil de encontrar.
+5.  **Configura el PATH**:
+        - Busca "Editar las variables de entorno del sistema" en el menú de Inicio y ábrelo.
+        - Haz clic en el botón Variables de entorno.
+        - En "Variables del sistema", selecciona la fila Path y haz clic en Editar.
+        - Haz clic en Nuevo y pega la ruta a la carpeta bin de FFmpeg (ejemplo: C:\ffmpeg\bin).
+        - Acepta todos los cuadros de diálogo.
+6.  **Verificación**: Para confirmar que todo funciona correctamente, abre una nueva ventana de comandos (CMD) y escribe: 
+        ```cmd
+        ffmpeg -version
+        ```
 
-### Pasos
+- **Voces Instaladas**: Debes tener las voces instaladas de Aholab (ej. `AhoTTS_Ainara_eu`) instalando la aplicación [AhoSAPI](https://aholab.ehu.eus/aholab/es/ahosapi/). Es una Speech API (Microsoft) de Aholab. Si no las tienes, el script usará la voz por defecto de Windows (David o Zira).
+
+### Uso
 
 1.  Abre el archivo `generador_local.py`.
 2.  Modifica la lista `bloques`. Asegúrate de poner el **nombre exacto** de la voz instalada en tu PC (puedes verlas ejecutando el archivo PowerShell `_get_pc_voices.ps1` si lo conservas).

@@ -8,7 +8,7 @@ import os
 CARPETA_SALIDA = "audios_locales"
 FFMPEG_CMD = "ffmpeg"  # Asegúrate de que ffmpeg esté instalado y en el PATH
 
-# Parámetros del efecto de voz (copiados de tu archivo original)
+# Parámetros del efecto de voz
 TEMPO = 0.90      # Velocidad
 SEMITONOS = 2.8   # Cuánto agudizar la voz (Pitch)
 INPUT_SR = 22050  # Frecuencia de muestreo de las voces AhoTTS
@@ -18,7 +18,7 @@ INPUT_SR = 22050  # Frecuencia de muestreo de las voces AhoTTS
 bloques = [
     {
         "voz": "AhoTTS_Alba_es", # Cambia esto si usas otra voz (ej: Microsoft Helena Desktop)
-        "texto": "¿Cuál es el río más moderno de España? El río E-Bro.",
+        "texto": "¿Cuál es el río más moderno de España? El río, E, Bro.",
         "archivo": "Chiste_Rio.wav"
     },
     {
@@ -59,7 +59,7 @@ def generar_audio_local():
         # 3. Procesar con FFmpeg (Aplicar efecto niño)
         ruta_final = os.path.join(CARPETA_SALIDA, archivo_final)
         
-        # Fórmula matemática para subir el tono (sacada de tus archivos originales)
+        # Fórmula matemática para subir el tono
         filtro = (
             f"asetrate={INPUT_SR}*pow(2\\,{SEMITONOS}/12),"
             f"aresample={INPUT_SR},"
