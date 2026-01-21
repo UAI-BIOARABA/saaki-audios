@@ -54,17 +54,17 @@ async def main():
     lista_audios = [
         # Ejemplo Español
         {
-            "archivo": "01_Saludo_ES",
+            "archivo": "Saludo_ES",
             "voz": "ES_NINA",
             "texto": "¡Hola! Soy Saaki. Me alegro mucho de veros a todos aquí."
         },
         # Ejemplo Euskera
         {
-            "archivo": "01_Agurra_EU",
+            "archivo": "Agurra_EU",
             "voz": "EU_NINA",
             "texto": "Kaixo! Saaki naiz. Oso pozik nago zuek hemen ikusteagatik."
         },
-        # Agrega más frases aquí...
+        # Agregar más frases aquí...
     ]
 
     for item in lista_audios:
