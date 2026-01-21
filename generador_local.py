@@ -11,19 +11,21 @@ FFMPEG_CMD = "ffmpeg"  # Asegúrate de que ffmpeg esté instalado y en el PATH
 # Parámetros del efecto de voz
 TEMPO = 0.90      # Velocidad
 SEMITONOS = 2.8   # Cuánto agudizar la voz (Pitch)
-INPUT_SR = 22050  # Frecuencia de muestreo de las voces AhoTTS
+INPUT_SR = 22050  # Frecuencia de muestreo de las voces AhoTTS 
+OUTPUT_SR = 16000 # Cambiamos la frecuencia de salida, necesario 16000 para el robot programando a alto nivel
+
 
 # Lista de audios a generar
 # IMPORTANTE: El nombre de la voz debe coincidir EXACTAMENTE con el instalado (interno) en Windows
 bloques = [
     {
-        "voz": "AhoTTS_Alba_es", # Cambia esto si usas otra voz (ej: Microsoft Helena Desktop)
-        "texto": "¿Cuál es el río más moderno de España? El río, E, Bro.",
-        "archivo": "Chiste_Rio.wav"
+        "voz": "AhoTTS_Alba_es", # Cambiar esto para usar otra voz
+        "texto": "Hola, Soy Saaki, ¿que tal estáis?",
+        "archivo": "Saludo_ES.wav"
     },
     {
         "voz": "AhoTTS_Ainara_eu",
-        "texto": "Kaixo. Zer moduz? Gustatu zaizue ni ezagutzea?",
+        "texto": "Kaixo, Saaki naiz, zer moduz?",
         "archivo": "Saludo_EU.wav"
     }
 ]
@@ -62,9 +64,10 @@ def generar_audio_local():
         # Fórmula matemática para subir el tono
         filtro = (
             f"asetrate={INPUT_SR}*pow(2\\,{SEMITONOS}/12),"
-            f"aresample={INPUT_SR},"
+            f"aresample={OUTPUT_SR},"
             f"atempo={TEMPO}"
         )
+
 
         cmd = [FFMPEG_CMD, "-y", "-i", archivo_temp, "-af", filtro, ruta_final]
 
