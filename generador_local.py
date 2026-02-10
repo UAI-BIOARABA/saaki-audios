@@ -9,8 +9,8 @@ CARPETA_SALIDA = "audios_locales"
 FFMPEG_CMD = "ffmpeg"  # Asegúrate de que ffmpeg esté instalado y en el PATH
 
 # Parámetros del efecto de voz
-TEMPO = 0.80      # Velocidad
-SEMITONOS = 2.0   # Cuánto agudizar la voz (Pitch)
+TEMPO = 0.90      # Velocidad
+SEMITONOS = 1.0   # Cuánto agudizar la voz (Pitch)
 INPUT_SR = 22050  # Frecuencia de muestreo de las voces AhoTTS 
 OUTPUT_SR = 16000 # Cambiamos la frecuencia de salida, necesario 16000 para el robot programando a alto nivel
 
