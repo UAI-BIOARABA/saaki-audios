@@ -18,24 +18,24 @@ Este paquete contiene dos herramientas para generar audios.
 
 Usa las voces instaladas en tu PC (como AhoTTS) y las modifica con un programa externo.
 
-### Requisitos Extra para Opción B
+### Requisitos Extra
 
-1.  **FFmpeg**: Debes tener instalado `ffmpeg` y configurado en las variables de entorno de Windows.
-2.  **Descarga**: Ve a la página oficial de FFmpeg y en la sección de Windows selecciona los ejecutables de gyan.dev o BtbN. Descarga el archivo .zip o .7z (generalmente llamado "release-essentials" o "full").
-3.  **Extrae**: Descomprime el contenido. Verás una carpeta con subcarpetas como bin, doc y presets.
-4.  **Ubica**: Mueve la carpeta extraída a la raíz de tu disco duro (ejemplo: C:\ffmpeg) para que sea fácil de encontrar.
-5.  **Configura el PATH**:
+**FFmpeg**: Debes tener instalado `ffmpeg` y configurado en las variables de entorno de Windows.
+1.  **Descarga**: Ve a la página oficial de FFmpeg y en la sección de Windows selecciona los ejecutables de gyan.dev o BtbN. Descarga el archivo .zip o .7z (generalmente llamado "release-essentials" o "full").
+2.  **Extrae**: Descomprime el contenido. Verás una carpeta con subcarpetas como bin, doc y presets.
+3.  **Ubica**: Mueve la carpeta extraída a la raíz de tu disco duro (ejemplo: C:\ffmpeg) para que sea fácil de encontrar.
+4.  **Configura el PATH**:
         - Busca "Editar las variables de entorno del sistema" en el menú de Inicio y ábrelo.
         - Haz clic en el botón Variables de entorno.
         - En "Variables del sistema", selecciona la fila Path y haz clic en Editar.
         - Haz clic en Nuevo y pega la ruta a la carpeta bin de FFmpeg (ejemplo: C:\ffmpeg\bin).
         - Acepta todos los cuadros de diálogo.
-6.  **Verificación**: Para confirmar que todo funciona correctamente, abre una nueva ventana de comandos (CMD) y escribe: 
+5.  **Verificación**: Para confirmar que todo funciona correctamente, abre una nueva ventana de comandos (CMD) y escribe: 
         ```cmd
         ffmpeg -version
         ```
 
-- **Voces Instaladas**: Debes tener las voces instaladas de Aholab (ej. `AhoTTS_Ainara_eu`) instalando la aplicación [AhoSAPI](https://aholab.ehu.eus/aholab/es/ahosapi/). Es una Speech API (Microsoft) de Aholab. Si no las tienes, el script usará la voz por defecto de Windows (David o Zira).
+**Voces Instaladas**: Debes tener las voces instaladas de Aholab (ej. `AhoTTS_Ainara_eu`) instalando la aplicación [AhoSAPI](https://aholab.ehu.eus/aholab/es/ahosapi/). Es una Speech API (Microsoft) de Aholab. Si no las tienes, el script usará la voz por defecto de Windows (David o Zira).
 
 ### Uso
 
@@ -50,6 +50,8 @@ Usa las voces instaladas en tu PC (como AhoTTS) y las modifica con un programa e
 ---
 
 ## 🚀 OPCIÓN B: Generador Online (No funciona en Euskera)
+
+No recomendamos su uso, solo en caso de absoluta necesidad
 
 Usa voces neuronales de internet.
 
