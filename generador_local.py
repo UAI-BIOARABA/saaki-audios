@@ -1,6 +1,32 @@
 import win32com.client
 import subprocess
 import os
+import sys
+
+# ==========================================
+# 🔇 CLASE PARA SILENCIAR AVISOS DURANTE EL PROCESO: [aHoTTS warn]: Can't use HDic database '.dic'
+# ==========================================
+class SilenciarSalida:
+    """
+    Redirige temporalmente stdout y stderr a devnull para ocultar
+    los warnings de bajo nivel (C++) de las voces AhoTTS.
+    """
+    def __enter__(self):
+        self._stdout_fd = sys.stdout.fileno()
+        self._stderr_fd = sys.stderr.fileno()
+        self._saved_stdout_fd = os.dup(self._stdout_fd)
+        self._saved_stderr_fd = os.dup(self._stderr_fd)
+        
+        self.devnull = open(os.devnull, 'w')
+        os.dup2(self.devnull.fileno(), self._stdout_fd)
+        os.dup2(self.devnull.fileno(), self._stderr_fd)
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        os.dup2(self._saved_stdout_fd, self._stdout_fd)
+        os.dup2(self._saved_stderr_fd, self._stderr_fd)
+        os.close(self._saved_stdout_fd)
+        os.close(self._saved_stderr_fd)
+        self.devnull.close()
 
 # ==========================================
 # ⚙️ CONFIGURACIÓN
@@ -12,14 +38,12 @@ FFMPEG_CMD = "ffmpeg"  # Asegúrate de que ffmpeg esté instalado y en el PATH
 TEMPO = 0.92      # Velocidad
 SEMITONOS = 1.75   # Cuánto agudizar la voz (Pitch)
 INPUT_SR = 22050  # Frecuencia de muestreo de las voces AhoTTS 
-OUTPUT_SR = 16000 # Cambiamos la frecuencia de salida, necesario 16000 para el robot programando a alto nivel
-
+OUTPUT_SR = 16000 # Cambiamos la frecuencia de salida, necesario 16000 para el robot
 
 # Lista de audios a generar
-# IMPORTANTE: El nombre de la voz debe coincidir EXACTAMENTE con el instalado (interno) en Windows
 bloques = [
     {
-        "voz": "AhoTTS_Alba_es", # Cambiar esto para usar otra voz
+        "voz": "AhoTTS_Alba_es",
         "texto": "Hoy es jueves, bienvenido a tu asistente de voz local.",
         "archivo": "Saludo_ES.wav"
     },
@@ -41,10 +65,12 @@ def generar_audio_local():
         texto = item["texto"]
         archivo_final = item["archivo"]
         
-        # 1. Buscar la voz en el sistema
+        # 1. Buscar la voz en el sistema (Silenciando warnings de carga)
         try:
-            speaker.Voice = speaker.GetVoices(f"Name={nombre_voz}").Item(0)
+            with SilenciarSalida():
+                speaker.Voice = speaker.GetVoices(f"Name={nombre_voz}").Item(0)
         except:
+            # Si falla, el bloque 'with' termina y restaura la consola, así que este print SÍ se ve.
             print(f"⚠️  AVISO: No se encontró la voz '{nombre_voz}'. Usando la predeterminada.")
 
         # 2. Generar archivo temporal (Voz normal)
@@ -53,25 +79,28 @@ def generar_audio_local():
         stream = win32com.client.Dispatch("SAPI.SpFileStream")
         stream.Open(archivo_temp, 3, True)
         speaker.AudioOutputStream = stream
-        speaker.Speak(texto)
+        
+        # Silenciamos el momento de hablar, que es donde AhoTTS suele quejarse del diccionario
+        with SilenciarSalida():
+            speaker.Speak(texto)
+            
         stream.Close()
         
-        print(f"🎙️  TTS Base generado: {archivo_temp}")
+        print(f"\n🎙️  TTS Base generado: {archivo_temp}")
 
         # 3. Procesar con FFmpeg (Aplicar efecto niño)
         ruta_final = os.path.join(CARPETA_SALIDA, archivo_final)
         
-        # Fórmula matemática para subir el tono
         filtro = (
             f"asetrate={INPUT_SR}*pow(2\\,{SEMITONOS}/12),"
             f"aresample={OUTPUT_SR},"
             f"atempo={TEMPO}"
         )
 
-
         cmd = [FFMPEG_CMD, "-y", "-i", archivo_temp, "-af", filtro, ruta_final]
 
         try:
+            # subprocess también tiene sus propios streams, los mandamos a DEVNULL para que FFmpeg no llene la pantalla
             subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             print(f"✨ Procesado con éxito: {ruta_final}")
         except FileNotFoundError:
