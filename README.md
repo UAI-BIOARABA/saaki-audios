@@ -12,11 +12,9 @@ Este paquete contiene dos herramientas para generar audios.
     ```
 3. **Sistema operativo Windows para la versión local**
 
-
-
 ## 🛠️ OPCIÓN A: Generador Local (Recomendado)
 
-Usa las voces instaladas en tu PC (como AhoTTS) y las modifica con un programa externo.
+Usa las voces instaladas en tu PC y las modifica para ajustarlas al tono y velocidad deseados.
 
 ### Requisitos Extra
 
@@ -35,7 +33,7 @@ Usa las voces instaladas en tu PC (como AhoTTS) y las modifica con un programa e
         ffmpeg -version
         ```
 
-**Voces Instaladas**: Debes tener las voces instaladas de Aholab (ej. `AhoTTS_Ainara_eu`) instalando la aplicación [AhoSAPI](https://aholab.ehu.eus/aholab/es/ahosapi/). Es una Speech API (Microsoft) de Aholab. Si no las tienes, el script usará la voz por defecto de Windows (David o Zira).
+**Voces Instaladas**: Debes tener voces de Text-To-Speech instaladas en tu ordeador. Hay servicios que ofrecen voces para uso persnoal o uso libre. Aségurate de conocer la licencia de uso de la voz que quieras utilizar dependiendo de tus objetivos. SPuedes comprobar las voces instaladas entu sistema mediante el script listar_voces_instaladas.py, el script usará la voz por defecto de Windows (David o Zira) si no encuentra la especificada.
 
 ### Uso
 
