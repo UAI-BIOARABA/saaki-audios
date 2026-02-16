@@ -33,12 +33,14 @@ Usa las voces instaladas en tu PC y las modifica para ajustarlas al tono y veloc
         ffmpeg -version
         ```
 
-**Voces Instaladas**: Debes tener voces de Text-To-Speech instaladas en tu ordeador. Hay servicios que ofrecen voces para uso persnoal o uso libre. Aségurate de conocer la licencia de uso de la voz que quieras utilizar dependiendo de tus objetivos. SPuedes comprobar las voces instaladas entu sistema mediante el script listar_voces_instaladas.py, el script usará la voz por defecto de Windows (David o Zira) si no encuentra la especificada.
+**Voces Instaladas**: Debes tener voces de Text-To-Speech instaladas en tu ordeador. Hay servicios que ofrecen voces para uso persnoal o uso libre. Aségurate de conocer la licencia de uso de la voz que quieras utilizar dependiendo de tus objetivos. 
+
+Puedes comprobar las voces instaladas en tu sistema mediante el script [listar_voces_instaladas.py](listar_voces_instaladas.py), el script usará la voz por defecto de Windows (David o Zira) si no encuentra la especificada.
 
 ### Uso
 
 1.  Abre el archivo `generador_local.py`.
-2.  Modifica la lista `bloques`. Asegúrate de poner el **nombre exacto** de la voz instalada en tu PC (puedes verlas ejecutando el archivo PowerShell `_get_pc_voices.ps1` si lo conservas).
+2.  Modifica la lista `bloques`. Asegúrate de poner el **nombre interno** de la voz instalada en tu PC ([listar_voces_instaladas.py](listar_voces_instaladas.py)).
 3.  Ejecuta el script:
     ```bash
     python generador_local.py
