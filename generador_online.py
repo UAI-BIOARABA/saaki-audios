@@ -9,12 +9,6 @@ VOCES_CONFIG = {
         "voz": "es-ES-ElviraNeural",
         "pitch": "+35Hz",  # Sube el tono para agudizar
         "rate": "+10%",    # Aumenta un poco la velocidad
-    },
-    "EU_NINA": {
-        "nombre": "Ainhoa (Modo Niña)",
-        "voz": "eu-ES-AinhoaNeural",
-        "pitch": "+50Hz",
-        "rate": "+5%",
     }
 }
 
@@ -57,12 +51,6 @@ async def main():
             "archivo": "Saludo_ES",
             "voz": "ES_NINA",
             "texto": "¡Hola! Soy Saaki. Me alegro mucho de veros a todos aquí."
-        },
-        # Ejemplo Euskera
-        {
-            "archivo": "Agurra_EU",
-            "voz": "EU_NINA",
-            "texto": "Kaixo! Saaki naiz. Oso pozik nago zuek hemen ikusteagatik."
         },
         # Agregar más frases aquí...
     ]
