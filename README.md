@@ -58,12 +58,12 @@ No recomendamos su uso, solo en caso de absoluta necesidad
 
 Usa voces neuronales de internet.
 
-1.  Abre el archivo `generador_local.py`.
+1.  Abre el archivo `generador_online.py`.
 2.  Ve a la sección `LISTA DE FRASES A GENERAR` (hacia el final del archivo).
 3.  Añade o modifica los textos que quieras.
 4.  Ejecuta el script:
     ```bash
-    python generador_local.py
+    python generador_online.py
     ```
 5.  Los audios aparecerán en la carpeta `audios_online`.
 
