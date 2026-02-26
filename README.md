@@ -2,7 +2,7 @@
 
 Este paquete contiene dos herramientas para generar audios.
 
-## 📋 Requisitos Previos
+## 🛠️ Requisitos Previos
 
 1.  **Python Instalado**: Asegúrate de tener Python 3.x instalado.
 2.  **Librerías necesarias**:
@@ -14,7 +14,7 @@ Este paquete contiene dos herramientas para generar audios.
 
 ---
 
-## 🛠️ OPCIÓN A: Generador Local (Recomendado)
+## 🚀 OPCIÓN A: Generador Local (Recomendado)
 
 Usa las voces instaladas en tu PC y las modifica para ajustarlas al tono y velocidad deseados.
 
@@ -68,3 +68,8 @@ Usa voces neuronales de internet.
 5.  Los audios aparecerán en la carpeta `audios_online`.
 
 ---
+
+## 🧑‍💻 Autores
+
+- **Project Manager:** [Juan Fernández](https://github.com/jfbioaraba)
+- **Lead Developer:** [Andoni González](https://github.com/andoni92)
