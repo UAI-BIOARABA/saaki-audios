@@ -1,20 +1,20 @@
-# Generador de Voces para SAAKI (Robot Humanoide)
+# Generador de Voces para Saaki - Unitree G1
 
-Este paquete contiene dos herramientas para generar audios.
+Este repositorio contiene varios scripts que nos permitirán crear audios compatibles con el robot humanoide Unitree G1.
 
 ## 🛠️ Requisitos Previos
 
-1.  **Python Instalado**: Asegúrate de tener Python 3.x instalado.
+1.  **Python Instalado**: Asegúrate de tener Python 3.10 o superior instalado.
 2.  **Librerías necesarias**:
     Abre una terminal (CMD o PowerShell) y ejecuta:
     ```bash
-    pip install edge-tts pywin32
+    pip install pywin32
     ```
-3. **Sistema operativo Windows para la versión local**
+3. **Sistema operativo Windows**
 
 ---
 
-## 🚀 OPCIÓN A: Generador Local (Recomendado)
+## 🚀 Generador Local
 
 Usa las voces instaladas en tu PC y las modifica para ajustarlas al tono y velocidad deseados.
 
@@ -42,30 +42,13 @@ Usa las voces instaladas en tu PC y las modifica para ajustarlas al tono y veloc
 
 ### Uso
 
-1.  Abre el archivo `generador_local.py`.
+1.  Abre el archivo `generador.py`.
 2.  Modifica la lista `bloques`. Asegúrate de poner el **nombre interno** de la voz instalada en tu PC ([listar_voces_instaladas.py](listar_voces_instaladas.py)).
 3.  Ejecuta el script:
     ```bash
-    python generador_local.py
+    python generador.py
     ```
-4.  Los audios aparecerán en la carpeta `audios_locales`.
-
----
-
-## 🚀 OPCIÓN B: Generador Online (No funciona en Euskera)
-
-No recomendamos su uso, solo en caso de absoluta necesidad
-
-Usa voces neuronales de internet.
-
-1.  Abre el archivo `generador_online.py`.
-2.  Ve a la sección `LISTA DE FRASES A GENERAR` (hacia el final del archivo).
-3.  Añade o modifica los textos que quieras.
-4.  Ejecuta el script:
-    ```bash
-    python generador_online.py
-    ```
-5.  Los audios aparecerán en la carpeta `audios_online`.
+4.  Los audios aparecerán en la carpeta `audios`.
 
 ---
 
