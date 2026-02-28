@@ -5,7 +5,7 @@ import os
 # ==========================================
 # ⚙️ CONFIGURACIÓN
 # ==========================================
-CARPETA_SALIDA = "audios_locales"
+CARPETA_SALIDA = "audios"
 FFMPEG_CMD = "ffmpeg"  # Asegúrate de que ffmpeg esté instalado y en el PATH
 
 # Parámetros del efecto de voz
@@ -43,7 +43,7 @@ def generar_audio_local():
         try:
             speaker.Voice = speaker.GetVoices(f"Name={nombre_voz}").Item(0)
         except:
-            print(f"⚠️  AVISO: No se encontró la voz '{nombre_voz}'. Usando la predeterminada.")
+            print(f"\n⚠️   AVISO: No se encontró la voz '{nombre_voz}'. Usando la predeterminada.   ⚠️")
 
         # 2. Generar archivo temporal (Voz normal)
         archivo_temp = os.path.join(CARPETA_SALIDA, "temp_" + archivo_final)
@@ -54,7 +54,7 @@ def generar_audio_local():
         speaker.Speak(texto)    
         stream.Close()
         
-        print(f"\n🎙️  TTS Base generado: {archivo_temp}")
+        print(f"TTS Base generado: {archivo_temp}")
 
         # 3. Procesar con FFmpeg (Aplicar efecto niño)
         ruta_final = os.path.join(CARPETA_SALIDA, archivo_final)
@@ -70,18 +70,18 @@ def generar_audio_local():
 
         try:
             subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            print(f"✨ Procesado con éxito: {ruta_final}")
+            print(f"Procesado con éxito: {ruta_final}")
         except FileNotFoundError:
-            print("❌ ERROR CRÍTICO: No se encontró 'ffmpeg'. Instálalo o revisa el PATH.")
+            print("⚠️   ERROR CRÍTICO: No se encontró 'ffmpeg'. Instálalo o revisa el PATH.   ⚠️")
             break
         except Exception as e:
-            print(f"❌ Error procesando audio: {e}")
+            print(f"⚠️   Error procesando audio: {e}   ⚠️")
 
         # 4. Limpieza
         if os.path.exists(archivo_temp):
             os.remove(archivo_temp)
 
-    print("\n🏁 Proceso local completado.")
+    print("\nProceso completado.")
 
 if __name__ == "__main__":
     generar_audio_local()
