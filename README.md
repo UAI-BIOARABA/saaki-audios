@@ -1,71 +1,84 @@
-# Generador de Voces para Saaki - Unitree G1
+<div align="center">
 
-Este repositorio contiene varios scripts que nos permitirán crear audios compatibles con el robot humanoide Unitree G1.
+<h1> Voice Generator for Saaki - Unitree G1 </h1>
 
-## 🛠️ Requisitos Previos
-
-1.  **Python Instalado**: Asegúrate de tener Python 3.10 o superior instalado.
-2.  **Librerías necesarias**:
-    Abre una terminal (CMD o PowerShell) y ejecuta:
-    ```bash
-    pip install pywin32
-    ```
-3. **Sistema operativo Windows**
+[![Windows 11](https://img.shields.io/badge/Windows-11-0078D6?logo=windows&logoColor=white)](https://www.microsoft.com/windows/windows-11)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Status: Tested on G1](https://img.shields.io/badge/Status-Tested%20on%20Unitree%20G1-success)](#-real-g1-robot)
+</div>
 
 ---
 
-## 🚀 Generador Local
+## 📖 Description
 
-Usa las voces instaladas en tu PC y las modifica para ajustarlas al tono y velocidad deseados.
+This repository contains a script to view the voices in our system and another to create audio files compatible with the Unitree G1, which plays audio at 16000 Hz.
 
-### Requisitos Extra
+The script allows us to modify and adjust voice parameters to make it deeper/higher-pitched or faster/slower.
 
-**Voces Instaladas**: Debes tener voces de Text-To-Speech instaladas en tu ordeador. 
+## 🛠️ Prerequisites
 
-- Hay servicios que ofrecen voces para uso persnoal o uso libre. Aségurate de conocer la licencia de uso de la voz que quieras utilizar dependiendo de tus objetivos. 
-- Puedes comprobar las voces instaladas en tu sistema mediante el script [listar_voces_instaladas.py](listar_voces_instaladas.py), el script usará la voz por defecto de Windows (David o Zira) si no encuentra la especificada.
+1.  **Python Installed**: Make sure you have Python 3.10 or higher installed.
+2.  **Required Libraries**:
+    Open a terminal (CMD or PowerShell) and run:
+    ```bash
+    pip install pywin32
+    ```
+3. **Windows Operating System**
 
-**FFmpeg**: Debes tener instalado `ffmpeg` y configurado en las variables de entorno de Windows.
-1.  **Descarga**: Ve a la página oficial de FFmpeg y en la sección de Windows selecciona los ejecutables de gyan.dev o BtbN. Descarga el archivo .zip o .7z (generalmente llamado "release-essentials" o "full").
-2.  **Extrae**: Descomprime el contenido. Verás una carpeta con subcarpetas como bin, doc y presets.
-3.  **Ubica**: Mueve la carpeta extraída a la raíz de tu disco duro (ejemplo: C:\ffmpeg) para que sea fácil de encontrar.
-4.  **Configura el PATH**:
-        - Busca "Editar las variables de entorno del sistema" en el menú de Inicio y ábrelo.
-        - Haz clic en el botón Variables de entorno.
-        - En "Variables del sistema", selecciona la fila Path y haz clic en Editar.
-        - Haz clic en Nuevo y pega la ruta a la carpeta bin de FFmpeg (ejemplo: C:\ffmpeg\bin).
-        - Acepta todos los cuadros de diálogo.
-5.  **Verificación**: Para confirmar que todo funciona correctamente, abre una nueva ventana de comandos (CMD) y escribe: 
+---
+
+## 🚀 Local Generator
+
+Uses voices installed on your PC and modifies them to adjust to the desired tone and speed.
+
+### Extra Requirements
+
+**Installed Voices**: You must have Text-To-Speech voices installed on your computer.
+
+- There are services that offer voices for personal or free use. Make sure you know the license usage terms of the voice you want to use depending on your objectives.
+- You can check the voices installed on your system using the [list_installed_voices.py](list_installed_voices.py) script. The script will use the default Windows voice (David or Zira) if it doesn't find the specified one.
+
+**FFmpeg**: You must have `ffmpeg` installed and configured in Windows environment variables.
+1.  **Download**: Go to the official FFmpeg page and in the Windows section select the executables from gyan.dev or BtbN. Download the .zip or .7z file (usually called "release-essentials" or "full").
+2.  **Extract**: Decompress the contents. You'll see a folder with subfolders like bin, doc and presets.
+3.  **Locate**: Move the extracted folder to the root of your hard drive (example: C:\ffmpeg) to make it easy to find.
+4.  **Configure PATH**:
+        - Search for "Edit environment variables for your system" in the Start menu and open it.
+        - Click the Environment variables button.
+        - Under "System variables", select the Path row and click Edit.
+        - Click New and paste the path to the FFmpeg bin folder (example: C:\ffmpeg\bin).
+        - Accept all dialog boxes.
+5.  **Verification**: To confirm everything is working correctly, open a new command window (CMD) and type: 
         ```cmd
         ffmpeg -version
         ```
 
-### Uso
+### Usage
 
-1.  Abre el archivo `generador.py`.
-2.  Modifica la lista `bloques`. Asegúrate de poner el **nombre interno** de la voz instalada en tu PC ([listar_voces_instaladas.py](listar_voces_instaladas.py)).
-3.  Ejecuta el script:
+1.  Open the `generator.py` file.
+2.  Modify the `blocks` list. Make sure to put the **internal name** of the voice installed on your PC ([list_installed_voices.py](list_installed_voices.py)).
+3.  Run the script:
     ```bash
-    python generador.py
+    python generator.py
     ```
-4.  Los audios aparecerán en la carpeta `audios`.
+4.  The audio files will appear in the `audios` folder.
 
 ---
 
-## 🧑‍💻 Autores
+## 🧑‍💻 Authors
 
 - **Project Manager:** [Juan Fernández](https://github.com/jfbioaraba)
 - **Lead Developer:** [Andoni González](https://github.com/andoni92)
 
-
 ---
+
 ## Disclaimer
 
-Este software y los materiales asociados se proporcionan “tal cual”, sin garantías de ningún tipo, ni expresas ni implícitas, incluyendo —pero no limitándose a— garantías de comercialización, idoneidad para un propósito particular o ausencia de errores.
+This software and associated materials are provided "as is", without any warranties of any kind, either express or implied, including—but not limited to—warranties of merchantability, fitness for a particular purpose, or absence of errors.
 
-Los/as autores/as y Bioaraba – Instituto de Investigación Sanitaria no asumen responsabilidad alguna por el uso, la redistribución o la modificación de este repositorio ni por los posibles daños directos o indirectos derivados de su utilización.
+The authors and Bioaraba – Health Research Institute assume no responsibility for the use, redistribution, or modification of this repository nor for any direct or indirect damages resulting from its use.
 
-Este proyecto tiene fines exclusivos de investigación y/o docencia.
+This project is intended exclusively for research and/or teaching purposes.
 
-No está destinado a su uso clínico, diagnóstico, terapéutico ni asistencial,
-ni sustituye herramientas certificadas ni la evaluación profesional en entornos sanitarios.
+It is not intended for clinical, diagnostic, therapeutic or care use,
+nor does it replace certified tools or professional evaluation in healthcare settings.
