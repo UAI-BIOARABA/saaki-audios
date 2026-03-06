@@ -7,13 +7,13 @@
 [![Status: Tested on G1](https://img.shields.io/badge/Status-Tested%20on%20Unitree%20G1-success)](#-real-g1-robot)
 </div>
 
----
-
 ## 📖 Description
 
 This repository contains a script to view the voices in our system and another to create audio files compatible with the Unitree G1, which plays audio at 16000 Hz.
 
 The script allows us to modify and adjust voice parameters to make it deeper/higher-pitched or faster/slower.
+
+---
 
 ## 🛠️ Prerequisites
 
@@ -27,7 +27,7 @@ The script allows us to modify and adjust voice parameters to make it deeper/hig
 
 ---
 
-## 🚀 Local Generator
+## 🎤 Audio Generator
 
 Uses voices installed on your PC and modifies them to adjust to the desired tone and speed.
 
