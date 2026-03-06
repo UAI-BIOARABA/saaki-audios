@@ -2,6 +2,11 @@
 
 <h1> Voice Generator for Saaki - Unitree G1 </h1>
 
+<p>
+  <a href="README.md">English</a> |
+  <a href="README_es.md">Español</a>
+</p>
+
 [![Windows 11](https://img.shields.io/badge/Windows-11-0078D6?logo=windows&logoColor=white)](https://www.microsoft.com/windows/windows-11)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Status: Tested on G1](https://img.shields.io/badge/Status-Tested%20on%20Unitree%20G1-success)](#-real-g1-robot)
