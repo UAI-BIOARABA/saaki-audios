@@ -2,9 +2,11 @@
 
 <h1> Generador de voz para Saaki - Unitree G1 </h1>
 
-<p>
-  <a href="README.md">English</a> |
-  <a href="README_es.md">Español</a>
+<p align="center">
+
+[![Language: English](https://img.shields.io/badge/Language-English-0A66C2?logo=github)](README.md)
+[![Idioma: Español](https://img.shields.io/badge/Idioma-Español-E34F26?logo=github)](README_es.md)
+
 </p>
 
 [![Windows 11](https://img.shields.io/badge/Windows-11-0078D6?logo=windows&logoColor=white)](https://www.microsoft.com/windows/windows-11)
